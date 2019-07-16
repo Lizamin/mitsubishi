@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <a href="#" class="navbar-left">
+    <img alt="Mitsubishi" (click)="$event.preventDefault()" [routerLink]="'/home'" style="width: 70px; length: 70px" src="assets/logo.png">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04"
+          aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample04" style="font-size: 18px;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" style="margin-left: 20px;">
+        <a class="nav-link" routerLink="/l200">New L200</a>
+      </li>
+      <li class="nav-item active" style="margin-left: 10px;">
+        <a class="nav-link" routerLink="/eclipse">ECLIPSE CROSS</a>
+      </li>
+      <li class="nav-item active" style="margin-left: 10px;">
+        <a class="nav-link" routerLink="/asx">ASX</a>
+      </li>
+      <li class="nav-item active" style="margin-left: 10px;">
+        <a class="nav-link" routerLink="/outlander">OUTLANDER</a>
+      </li>
+      <li class="nav-item active" style="margin-left: 10px;">
+        <a class="nav-link" routerLink="/pajero_sport">PAJERO SPORT</a>
+      </li>
+      <li class="nav-item active" style="margin-left: 10px;">
+        <a class="nav-link" routerLink="/pajero">PAJERO</a>
+      </li>
+
+    </ul>
+
+    <span class="navbar-text" style="margin-right: 30px;">
+      <a routerLink="/admin" *ngIf="isAdmin()">Admin Panel</a>
+    </span>
+
+    <span class="navbar-text">
+      <a routerLink="/login" *ngIf="!isLoggedIn()">Login</a>
+      <a (click)="$event.preventDefault(); logout()" href="#" *ngIf="isLoggedIn()">{{getUserName()}} (logout)</a>
+    </span>
+  </div>
+</nav>
